@@ -1,18 +1,21 @@
 
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
+import LanguageToggle from './LanguageToggle';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { t } = useLanguage();
 
   const navItems = [
-    { label: 'Home', href: '#hero' },
-    { label: 'Audience', href: '#target-audience' },
-    { label: 'Objectives', href: '#objectives' },
-    { label: 'Platform', href: '#platform-preview' },
-    { label: 'Partners', href: '#partners' },
-    { label: 'Contact', href: '#footer' },
+    { label: t('nav.home'), href: '#hero' },
+    { label: t('nav.audience'), href: '#target-audience' },
+    { label: t('nav.objectives'), href: '#objectives' },
+    { label: t('nav.platform'), href: '#platform-preview' },
+    { label: t('nav.partners'), href: '#partners' },
+    { label: t('nav.contact'), href: '#footer' },
   ];
 
   useEffect(() => {
@@ -40,28 +43,30 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold text-cyberes-primary">
+            <h1 className="text-2xl font-bold text-cyberes-primary font-inter">
               CybeRes
             </h1>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
+            <div className="flex items-baseline space-x-8">
               {navItems.map((item) => (
                 <button
                   key={item.href}
                   onClick={() => handleNavClick(item.href)}
-                  className="text-cyberes-gray hover:text-cyberes-primary px-3 py-2 text-sm font-medium transition-colors duration-200"
+                  className="text-cyberes-gray hover:text-cyberes-primary px-3 py-2 text-sm font-medium transition-colors duration-200 font-inter"
                 >
                   {item.label}
                 </button>
               ))}
             </div>
+            <LanguageToggle />
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center space-x-4">
+            <LanguageToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-cyberes-gray hover:text-cyberes-primary p-2"
@@ -80,7 +85,7 @@ const Navigation = () => {
                 <button
                   key={item.href}
                   onClick={() => handleNavClick(item.href)}
-                  className="text-cyberes-gray hover:text-cyberes-primary block px-3 py-2 text-base font-medium w-full text-left transition-colors duration-200"
+                  className="text-cyberes-gray hover:text-cyberes-primary block px-3 py-2 text-base font-medium w-full text-left transition-colors duration-200 font-inter"
                 >
                   {item.label}
                 </button>

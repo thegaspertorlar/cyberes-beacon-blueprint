@@ -1,47 +1,50 @@
 
 import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Objectives = () => {
+  const { t } = useLanguage();
+
   const objectives = [
     {
       number: "01",
-      title: "Raise awareness about cybersecurity risks",
-      description: "Educate users about common digital threats and vulnerabilities they may encounter in their daily online activities."
+      title: t('objectives.item1.title'),
+      description: t('objectives.item1.description')
     },
     {
       number: "02", 
-      title: "Promote digital literacy and safe online practices",
-      description: "Provide practical guidance on how to navigate the digital world securely and responsibly."
+      title: t('objectives.item2.title'),
+      description: t('objectives.item2.description')
     },
     {
       number: "03",
-      title: "Empower individuals with practical cybersecurity skills",
-      description: "Equip users with hands-on knowledge and tools to protect themselves and their communities online."
+      title: t('objectives.item3.title'),
+      description: t('objectives.item3.description')
     },
     {
       number: "04",
-      title: "Foster inclusive cybersecurity education",
-      description: "Ensure cybersecurity knowledge is accessible to all, regardless of background or technical experience."
+      title: t('objectives.item4.title'),
+      description: t('objectives.item4.description')
     },
     {
       number: "05",
-      title: "Build resilient digital communities",
-      description: "Create networks of informed individuals who can support each other in maintaining digital security."
+      title: t('objectives.item5.title'),
+      description: t('objectives.item5.description')
     },
     {
       number: "06",
-      title: "Support educators and digital facilitators",
-      description: "Provide resources and training for those who guide others in developing digital security awareness."
+      title: t('objectives.item6.title'),
+      description: t('objectives.item6.description')
     },
     {
       number: "07",
-      title: "Bridge the digital divide through education",
-      description: "Address gaps in cybersecurity knowledge across different communities and demographics."
+      title: t('objectives.item7.title'),
+      description: t('objectives.item7.description')
     },
     {
       number: "08",
-      title: "Create sustainable cybersecurity learning pathways",
-      description: "Develop long-term educational frameworks that evolve with emerging digital threats and technologies."
+      title: t('objectives.item8.title'),
+      description: t('objectives.item8.description')
     }
   ];
 
@@ -71,8 +74,8 @@ const Objectives = () => {
                 
                 {/* Caption */}
                 <div className="mt-6 text-center">
-                  <p className="text-lg text-cyberes-gray italic">
-                    "Step confidently into the digital world."
+                  <p className="text-lg text-cyberes-gray italic font-inter">
+                    {t('objectives.visual.caption')}
                   </p>
                 </div>
               </div>
@@ -82,32 +85,32 @@ const Objectives = () => {
                 <Button 
                   variant="outline" 
                   size="lg"
-                  className="px-8 py-3 text-cyberes-primary border-cyberes-primary hover:bg-cyberes-primary hover:text-white transition-colors duration-200"
+                  className="px-8 py-3 text-cyberes-primary border-cyberes-primary hover:bg-cyberes-primary hover:text-white transition-colors duration-200 font-inter font-semibold"
                 >
-                  CONTACT US
+                  {t('objectives.cta')}
                 </Button>
               </div>
             </div>
 
             {/* Right Side - Objectives List */}
             <div className="order-1 lg:order-2">
-              <h2 className="text-3xl md:text-4xl font-bold text-cyberes-primary mb-8">
-                Objectives
+              <h2 className="text-3xl md:text-4xl font-bold text-cyberes-primary mb-8 font-inter">
+                {t('objectives.title')}
               </h2>
               
               <div className="space-y-6">
                 {objectives.map((objective, index) => (
                   <div key={index} className="flex items-start space-x-4">
                     <div className="flex-shrink-0">
-                      <span className="inline-flex items-center justify-center w-8 h-8 bg-cyberes-primary text-white text-sm font-bold rounded-full">
+                      <span className="inline-flex items-center justify-center w-8 h-8 bg-cyberes-primary text-white text-sm font-bold rounded-full font-inter">
                         {objective.number}
                       </span>
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-lg font-semibold text-cyberes-primary mb-2">
+                      <h3 className="text-lg font-semibold text-cyberes-primary mb-2 font-inter">
                         {objective.title}
                       </h3>
-                      <p className="text-cyberes-gray leading-relaxed">
+                      <p className="text-cyberes-gray leading-relaxed font-inter">
                         {objective.description}
                       </p>
                     </div>

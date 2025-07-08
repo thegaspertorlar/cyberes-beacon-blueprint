@@ -1,34 +1,38 @@
 
+import { useLanguage } from '@/contexts/LanguageContext';
+
 const TargetAudience = () => {
+  const { t } = useLanguage();
+
   const audiences = [
     {
       number: "01",
-      title: "Adults with limited cybersecurity awareness",
-      description: "Individuals who need foundational knowledge and practical skills to protect themselves in the digital world."
+      title: t('audience.item1.title'),
+      description: t('audience.item1.description')
     },
     {
       number: "02", 
-      title: "Individuals from migrant and underrepresented communities",
-      description: "Communities that may face unique digital challenges and require accessible, culturally-sensitive cybersecurity education."
+      title: t('audience.item2.title'),
+      description: t('audience.item2.description')
     },
     {
       number: "03",
-      title: "Educators and digital facilitators supporting lifelong learning",
-      description: "Teachers, trainers, and community leaders who guide others in developing essential digital security skills."
+      title: t('audience.item3.title'),
+      description: t('audience.item3.description')
     }
   ];
 
   return (
-    <section id="target-audience" className="py-20" style={{ backgroundColor: '#F9F9F9' }}>
+    <section id="target-audience" className="py-20 bg-cyberes-gray-lighter">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h3 className="text-sm font-semibold tracking-wider uppercase mb-4" style={{ color: '#28A745' }}>
-              PROJECT DETAILS
+            <h3 className="text-sm font-semibold tracking-wider uppercase mb-4 font-inter" style={{ color: '#28A745' }}>
+              {t('audience.subtitle')}
             </h3>
-            <h2 className="text-3xl md:text-4xl font-bold text-cyberes-primary">
-              This project is designed for
+            <h2 className="text-3xl md:text-4xl font-bold text-cyberes-primary font-inter">
+              {t('audience.title')}
             </h2>
           </div>
 
@@ -48,10 +52,10 @@ const TargetAudience = () => {
 
                 {/* Content */}
                 <div className="space-y-4">
-                  <h3 className="text-xl font-semibold text-cyberes-primary leading-tight">
+                  <h3 className="text-xl font-semibold text-cyberes-primary leading-tight font-inter">
                     {audience.title}
                   </h3>
-                  <p className="text-cyberes-gray leading-relaxed">
+                  <p className="text-cyberes-gray leading-relaxed font-inter">
                     {audience.description}
                   </p>
                 </div>
