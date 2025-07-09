@@ -1,13 +1,15 @@
 
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
+import CyberAnimation from '@/components/CyberAnimation';
 
 const Hero = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center bg-cyberes-primary">
-      <div className="container mx-auto px-4 lg:px-8">
+    <section id="hero" className="min-h-screen flex items-center justify-center bg-cyberes-primary relative overflow-hidden">
+      <CyberAnimation />
+      <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Label */}
           <div className="mb-6">

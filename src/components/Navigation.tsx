@@ -2,7 +2,9 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import LanguageToggle from './LanguageToggle';
+import LanguageDropdown from './LanguageDropdown';
+import ContactModal from './ContactModal';
+import { Button } from '@/components/ui/button';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,11 +13,9 @@ const Navigation = () => {
 
   const navItems = [
     { label: t('nav.home'), href: '#hero' },
-    { label: t('nav.audience'), href: '#target-audience' },
-    { label: t('nav.objectives'), href: '#objectives' },
-    { label: t('nav.platform'), href: '#platform-preview' },
+    { label: t('nav.details'), href: '#target-audience' },
     { label: t('nav.partners'), href: '#partners' },
-    { label: t('nav.contact'), href: '#footer' },
+    { label: t('nav.training'), href: '/training' },
   ];
 
   useEffect(() => {
@@ -29,9 +29,15 @@ const Navigation = () => {
 
   const handleNavClick = (href: string) => {
     setIsOpen(false);
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (href.startsWith('/')) {
+      // External/internal link
+      window.open(href, '_blank');
+    } else {
+      // Anchor scroll
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
@@ -61,12 +67,31 @@ const Navigation = () => {
                 </button>
               ))}
             </div>
-            <LanguageToggle />
+            <div className="flex items-center space-x-4">
+              <LanguageDropdown />
+              <ContactModal>
+                <Button 
+                  variant="outline"
+                  className="border-2 border-cyberes-primary text-cyberes-primary hover:bg-cyberes-primary hover:text-white rounded-full px-6 py-2 font-inter font-semibold transition-all duration-200"
+                >
+                  {t('nav.contact')}
+                </Button>
+              </ContactModal>
+            </div>
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center space-x-4">
-            <LanguageToggle />
+            <LanguageDropdown />
+            <ContactModal>
+              <Button 
+                variant="outline"
+                size="sm"
+                className="border-2 border-cyberes-primary text-cyberes-primary hover:bg-cyberes-primary hover:text-white rounded-full px-4 py-1 font-inter font-semibold text-xs transition-all duration-200"
+              >
+                {t('nav.contact')}
+              </Button>
+            </ContactModal>
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-cyberes-gray hover:text-cyberes-primary p-2"

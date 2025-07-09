@@ -19,11 +19,17 @@ const translations = {
   en: {
     // Navigation
     'nav.home': 'Home',
-    'nav.audience': 'Audience',
-    'nav.objectives': 'Objectives',
-    'nav.platform': 'Platform',
+    'nav.details': 'Details',
     'nav.partners': 'Partners',
-    'nav.contact': 'Contact',
+    'nav.training': 'Training Platform',
+    'nav.contact': 'Contact Us',
+    
+    // Contact Modal
+    'contact.title': 'Contact Us',
+    'contact.fullName': 'Full Name',
+    'contact.email': 'Email',
+    'contact.message': 'Message',
+    'contact.submit': 'Submit',
     
     // Hero Section
     'hero.label': 'CYBERES',
@@ -83,11 +89,17 @@ const translations = {
   de: {
     // Navigation
     'nav.home': 'Startseite',
-    'nav.audience': 'Zielgruppe',
-    'nav.objectives': 'Ziele',
-    'nav.platform': 'Plattform',
+    'nav.details': 'Details',
     'nav.partners': 'Partner',
-    'nav.contact': 'Kontakt',
+    'nav.training': 'Trainingsplattform',
+    'nav.contact': 'Kontakt aufnehmen',
+    
+    // Contact Modal
+    'contact.title': 'Kontakt aufnehmen',
+    'contact.fullName': 'Vollständiger Name',
+    'contact.email': 'E-Mail',
+    'contact.message': 'Nachricht',
+    'contact.submit': 'Senden',
     
     // Hero Section
     'hero.label': 'CYBERES',
@@ -147,11 +159,17 @@ const translations = {
   nb: {
     // Navigation
     'nav.home': 'Hjem',
-    'nav.audience': 'Målgruppe',
-    'nav.objectives': 'Mål',
-    'nav.platform': 'Plattform',
+    'nav.details': 'Detaljer',
     'nav.partners': 'Partnere',
-    'nav.contact': 'Kontakt',
+    'nav.training': 'Treningsplattform',
+    'nav.contact': 'Kontakt oss',
+    
+    // Contact Modal
+    'contact.title': 'Kontakt oss',
+    'contact.fullName': 'Fullt navn',
+    'contact.email': 'E-post',
+    'contact.message': 'Melding',
+    'contact.submit': 'Send inn',
     
     // Hero Section
     'hero.label': 'CYBERES',

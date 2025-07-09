@@ -1,6 +1,7 @@
 
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
+import ContactModal from '@/components/ContactModal';
 
 const Objectives = () => {
   const { t } = useLanguage();
@@ -25,26 +26,6 @@ const Objectives = () => {
       number: "04",
       title: t('objectives.item4.title'),
       description: t('objectives.item4.description')
-    },
-    {
-      number: "05",
-      title: t('objectives.item5.title'),
-      description: t('objectives.item5.description')
-    },
-    {
-      number: "06",
-      title: t('objectives.item6.title'),
-      description: t('objectives.item6.description')
-    },
-    {
-      number: "07",
-      title: t('objectives.item7.title'),
-      description: t('objectives.item7.description')
-    },
-    {
-      number: "08",
-      title: t('objectives.item8.title'),
-      description: t('objectives.item8.description')
     }
   ];
 
@@ -56,19 +37,42 @@ const Objectives = () => {
             {/* Left Side - Visual */}
             <div className="order-2 lg:order-1">
               <div className="relative">
-                {/* Abstract cyber resilience illustration placeholder */}
-                <div className="bg-gradient-to-br from-cyberes-primary to-cyberes-light rounded-2xl p-12 text-center">
-                  <div className="space-y-6">
-                    <div className="w-24 h-24 bg-white/20 rounded-full mx-auto flex items-center justify-center">
-                      <div className="w-12 h-12 bg-white/30 rounded-full flex items-center justify-center">
-                        <div className="w-6 h-6 bg-white rounded-full"></div>
-                      </div>
+                {/* Digital Shield Animation */}
+                <div className="bg-gradient-to-br from-cyberes-primary to-cyberes-light rounded-2xl p-12 text-center relative overflow-hidden">
+                  <div className="relative z-10 space-y-6">
+                    {/* Animated shield icon */}
+                    <div className="w-24 h-24 mx-auto relative">
+                      <svg viewBox="0 0 100 100" className="w-full h-full">
+                        <defs>
+                          <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stopColor="rgba(255,255,255,0.9)" />
+                            <stop offset="100%" stopColor="rgba(255,255,255,0.6)" />
+                          </linearGradient>
+                        </defs>
+                        <path 
+                          d="M50 10 L20 25 L20 60 C20 75 35 85 50 90 C65 85 80 75 80 60 L80 25 Z" 
+                          fill="url(#shieldGradient)"
+                          className="animate-pulse"
+                        />
+                        <circle cx="50" cy="50" r="8" fill="white" className="animate-ping" />
+                        <circle cx="50" cy="50" r="4" fill="white" />
+                      </svg>
                     </div>
+                    
+                    {/* Network connections */}
                     <div className="space-y-2">
-                      <div className="h-2 bg-white/20 rounded-full mx-auto max-w-32"></div>
-                      <div className="h-2 bg-white/30 rounded-full mx-auto max-w-24"></div>
-                      <div className="h-2 bg-white/20 rounded-full mx-auto max-w-40"></div>
+                      <div className="h-1 bg-white/30 rounded-full mx-auto max-w-32 animate-pulse"></div>
+                      <div className="h-1 bg-white/40 rounded-full mx-auto max-w-24 animate-pulse" style={{animationDelay: '0.5s'}}></div>
+                      <div className="h-1 bg-white/30 rounded-full mx-auto max-w-40 animate-pulse" style={{animationDelay: '1s'}}></div>
                     </div>
+                  </div>
+                  
+                  {/* Background pattern */}
+                  <div className="absolute inset-0 opacity-10">
+                    <div className="absolute top-4 left-4 w-4 h-4 border border-white rounded-full animate-ping"></div>
+                    <div className="absolute top-8 right-8 w-3 h-3 border border-white rounded-full animate-ping" style={{animationDelay: '1s'}}></div>
+                    <div className="absolute bottom-6 left-8 w-2 h-2 border border-white rounded-full animate-ping" style={{animationDelay: '2s'}}></div>
+                    <div className="absolute bottom-4 right-4 w-3 h-3 border border-white rounded-full animate-ping" style={{animationDelay: '0.5s'}}></div>
                   </div>
                 </div>
                 
@@ -82,13 +86,15 @@ const Objectives = () => {
 
               {/* CTA Button */}
               <div className="mt-8 text-center">
-                <Button 
-                  variant="outline" 
-                  size="lg"
-                  className="px-8 py-3 text-cyberes-primary border-cyberes-primary hover:bg-cyberes-primary hover:text-white transition-colors duration-200 font-inter font-semibold"
-                >
-                  {t('objectives.cta')}
-                </Button>
+                <ContactModal>
+                  <Button 
+                    variant="outline" 
+                    size="lg"
+                    className="px-8 py-3 text-cyberes-primary border-cyberes-primary hover:bg-cyberes-primary hover:text-white transition-colors duration-200 font-inter font-semibold"
+                  >
+                    {t('objectives.cta')}
+                  </Button>
+                </ContactModal>
               </div>
             </div>
 
