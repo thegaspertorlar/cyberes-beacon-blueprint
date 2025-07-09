@@ -30,19 +30,19 @@ const Objectives = () => {
   ];
 
   return (
-    <section id="objectives" className="py-20 bg-white">
+    <section id="objectives" className="py-20 bg-white" aria-labelledby="objectives-heading">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left Side - Visual */}
             <div className="order-2 lg:order-1">
-              <div className="relative">
+              <figure className="relative">
                 {/* Digital Shield Animation */}
-                <div className="bg-gradient-to-br from-cyberes-primary to-cyberes-light rounded-2xl p-12 text-center relative overflow-hidden">
+                <div className="bg-gradient-to-br from-cyberes-primary to-cyberes-light rounded-2xl p-12 text-center relative overflow-hidden" role="img" aria-label="Digital security shield with network connections representing cyber resilience">
                   <div className="relative z-10 space-y-6">
                     {/* Animated shield icon */}
                     <div className="w-24 h-24 mx-auto relative">
-                      <svg viewBox="0 0 100 100" className="w-full h-full">
+                      <svg viewBox="0 0 100 100" className="w-full h-full" aria-hidden="true">
                         <defs>
                           <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                             <stop offset="0%" stopColor="rgba(255,255,255,0.9)" />
@@ -77,12 +77,12 @@ const Objectives = () => {
                 </div>
                 
                 {/* Caption */}
-                <div className="mt-6 text-center">
+                <figcaption className="mt-6 text-center">
                   <p className="text-lg text-cyberes-gray italic font-inter">
                     {t('objectives.visual.caption')}
                   </p>
-                </div>
-              </div>
+                </figcaption>
+              </figure>
 
               {/* CTA Button */}
               <div className="mt-8 text-center">
@@ -100,15 +100,15 @@ const Objectives = () => {
 
             {/* Right Side - Objectives List */}
             <div className="order-1 lg:order-2">
-              <h2 className="text-3xl md:text-4xl font-bold text-cyberes-primary mb-8 font-inter">
+              <h2 id="objectives-heading" className="text-3xl md:text-4xl font-bold text-cyberes-primary mb-8 font-inter">
                 {t('objectives.title')}
               </h2>
               
-              <div className="space-y-6">
+              <ol className="space-y-6" role="list">
                 {objectives.map((objective, index) => (
-                  <div key={index} className="flex items-start space-x-4">
+                  <li key={index} className="flex items-start space-x-4">
                     <div className="flex-shrink-0">
-                      <span className="inline-flex items-center justify-center w-8 h-8 bg-cyberes-primary text-white text-sm font-bold rounded-full font-inter">
+                      <span className="inline-flex items-center justify-center w-8 h-8 bg-cyberes-primary text-white text-sm font-bold rounded-full font-inter" aria-label={`Objective ${objective.number}`}>
                         {objective.number}
                       </span>
                     </div>
@@ -120,9 +120,9 @@ const Objectives = () => {
                         {objective.description}
                       </p>
                     </div>
-                  </div>
+                  </li>
                 ))}
-              </div>
+              </ol>
             </div>
           </div>
         </div>

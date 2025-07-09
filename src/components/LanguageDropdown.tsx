@@ -18,7 +18,10 @@ const LanguageDropdown = () => {
 
   return (
     <Select value={language} onValueChange={(value: Language) => setLanguage(value)}>
-      <SelectTrigger className="w-20 bg-white/10 border-white/20 text-white hover:bg-white/20 font-inter">
+      <SelectTrigger 
+        className="w-20 bg-white/10 border-white/20 text-white hover:bg-white/20 font-inter focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-cyberes-primary" 
+        aria-label="Select language"
+      >
         <SelectValue />
       </SelectTrigger>
       <SelectContent className="bg-white border border-gray-200">

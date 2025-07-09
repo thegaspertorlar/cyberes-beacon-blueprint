@@ -23,29 +23,30 @@ const TargetAudience = () => {
   ];
 
   return (
-    <section id="target-audience" className="py-20 bg-cyberes-gray-lighter">
+    <section id="target-audience" className="py-20 bg-cyberes-gray-lighter" aria-labelledby="audience-heading">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16">
-            <h3 className="text-sm font-semibold tracking-wider uppercase mb-4 font-inter" style={{ color: '#28A745' }}>
+          <header className="text-center mb-16">
+            <p className="text-sm font-semibold tracking-wider uppercase mb-4 font-inter" style={{ color: '#28A745' }}>
               {t('audience.subtitle')}
-            </h3>
-            <h2 className="text-3xl md:text-4xl font-bold text-cyberes-primary font-inter">
+            </p>
+            <h2 id="audience-heading" className="text-3xl md:text-4xl font-bold text-cyberes-primary font-inter">
               {t('audience.title')}
             </h2>
-          </div>
+          </header>
 
           {/* Audience Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8" role="list">
             {audiences.map((audience, index) => (
-              <div key={index} className="text-center">
+              <article key={index} className="text-center" role="listitem">
                 {/* Circular Badge */}
                 <div 
                   className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6"
                   style={{ backgroundColor: '#28A745' }}
+                  aria-label={`Audience ${audience.number}`}
                 >
-                  <span className="text-2xl font-bold text-white font-inter">
+                  <span className="text-2xl font-bold text-white font-inter" aria-hidden="true">
                     {audience.number}
                   </span>
                 </div>
@@ -59,7 +60,7 @@ const TargetAudience = () => {
                     {audience.description}
                   </p>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>
