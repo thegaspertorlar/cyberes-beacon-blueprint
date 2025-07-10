@@ -37,42 +37,126 @@ const Objectives = () => {
             {/* Left Side - Visual */}
             <div className="order-2 lg:order-1">
               <figure className="relative">
-                {/* Digital Shield Animation */}
-                <div className="bg-gradient-to-br from-cyberes-primary to-cyberes-light rounded-2xl p-12 text-center relative overflow-hidden" role="img" aria-label="Digital security shield with network connections representing cyber resilience">
-                  <div className="relative z-10 space-y-6">
-                    {/* Animated shield icon */}
-                    <div className="w-24 h-24 mx-auto relative">
-                      <svg viewBox="0 0 100 100" className="w-full h-full" aria-hidden="true">
+                {/* Enhanced Cyber Resilience Visualization */}
+                <div className="bg-gradient-to-br from-cyberes-primary via-cyberes-light to-cyberes-lighter rounded-2xl p-16 text-center relative overflow-hidden" role="img" aria-label="Advanced cybersecurity network with real-time threat detection and protection systems">
+                  {/* Animated background elements */}
+                  <div className="absolute inset-0 opacity-20">
+                    {/* Scanning lines */}
+                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white to-transparent">
+                      <div className="w-full h-full animate-pulse" style={{animationDelay: '0s'}}></div>
+                    </div>
+                    <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white to-transparent">
+                      <div className="w-full h-full animate-pulse" style={{animationDelay: '1s'}}></div>
+                    </div>
+                    
+                    {/* Corner elements */}
+                    <div className="absolute top-4 left-4 w-8 h-8 border-l-2 border-t-2 border-white opacity-60"></div>
+                    <div className="absolute top-4 right-4 w-8 h-8 border-r-2 border-t-2 border-white opacity-60"></div>
+                    <div className="absolute bottom-4 left-4 w-8 h-8 border-l-2 border-b-2 border-white opacity-60"></div>
+                    <div className="absolute bottom-4 right-4 w-8 h-8 border-r-2 border-b-2 border-white opacity-60"></div>
+                    
+                    {/* Floating particles */}
+                    <div className="absolute top-12 left-12 w-2 h-2 bg-white rounded-full animate-ping" style={{animationDelay: '0.5s'}}></div>
+                    <div className="absolute top-20 right-16 w-1.5 h-1.5 bg-white rounded-full animate-ping" style={{animationDelay: '1.5s'}}></div>
+                    <div className="absolute bottom-16 left-20 w-2.5 h-2.5 bg-white rounded-full animate-ping" style={{animationDelay: '2s'}}></div>
+                    <div className="absolute bottom-12 right-12 w-1 h-1 bg-white rounded-full animate-ping" style={{animationDelay: '0.8s'}}></div>
+                  </div>
+                  
+                  <div className="relative z-10 space-y-8">
+                    {/* Central shield with enhanced design */}
+                    <div className="w-32 h-32 mx-auto relative">
+                      <svg viewBox="0 0 120 120" className="w-full h-full" aria-hidden="true">
                         <defs>
-                          <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stopColor="rgba(255,255,255,0.9)" />
+                          <radialGradient id="enhancedShieldGradient" cx="50%" cy="30%" r="70%">
+                            <stop offset="0%" stopColor="rgba(255,255,255,1)" />
+                            <stop offset="50%" stopColor="rgba(255,255,255,0.9)" />
                             <stop offset="100%" stopColor="rgba(255,255,255,0.6)" />
-                          </linearGradient>
+                          </radialGradient>
+                          <filter id="glow">
+                            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                            <feMerge> 
+                              <feMergeNode in="coloredBlur"/>
+                              <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                          </filter>
                         </defs>
+                        
+                        {/* Outer protective ring */}
+                        <circle cx="60" cy="60" r="45" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="2" strokeDasharray="8,4" filter="url(#glow)">
+                          <animateTransform 
+                            attributeName="transform" 
+                            origin="60 60"
+                            type="rotate" 
+                            values="0;360" 
+                            dur="10s" 
+                            repeatCount="indefinite"
+                          />
+                        </circle>
+                        
+                        {/* Main shield body */}
                         <path 
-                          d="M50 10 L20 25 L20 60 C20 75 35 85 50 90 C65 85 80 75 80 60 L80 25 Z" 
-                          fill="url(#shieldGradient)"
-                          className="animate-pulse"
-                        />
-                        <circle cx="50" cy="50" r="8" fill="white" className="animate-ping" />
-                        <circle cx="50" cy="50" r="4" fill="white" />
+                          d="M60 15 L25 35 L25 75 C25 90 42.5 100 60 105 C77.5 100 95 90 95 75 L95 35 Z" 
+                          fill="url(#enhancedShieldGradient)"
+                          stroke="rgba(255,255,255,0.8)"
+                          strokeWidth="1.5"
+                          filter="url(#glow)"
+                        >
+                          <animate attributeName="opacity" values="0.8;1;0.8" dur="2.5s" repeatCount="indefinite" />
+                        </path>
+                        
+                        {/* Central security core */}
+                        <circle cx="60" cy="60" r="12" fill="white" opacity="0.9">
+                          <animate attributeName="r" values="10;15;10" dur="3s" repeatCount="indefinite" />
+                          <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite" />
+                        </circle>
+                        
+                        {/* Lock symbol */}
+                        <rect x="56" y="57" width="8" height="8" rx="1" fill="rgba(4,14,76,0.8)" />
+                        <circle cx="60" cy="53" r="3" fill="none" stroke="rgba(4,14,76,0.8)" strokeWidth="2" />
+                        
+                        {/* Data streams */}
+                        <line x1="30" y1="50" x2="90" y2="50" stroke="rgba(255,255,255,0.6)" strokeWidth="1" strokeDasharray="4,2">
+                          <animate attributeName="stroke-dashoffset" values="0;12" dur="2s" repeatCount="indefinite" />
+                        </line>
+                        <line x1="30" y1="70" x2="90" y2="70" stroke="rgba(255,255,255,0.6)" strokeWidth="1" strokeDasharray="4,2">
+                          <animate attributeName="stroke-dashoffset" values="0;12" dur="1.5s" repeatCount="indefinite" />
+                        </line>
                       </svg>
                     </div>
                     
-                    {/* Network connections */}
-                    <div className="space-y-2">
-                      <div className="h-1 bg-white/30 rounded-full mx-auto max-w-32 animate-pulse"></div>
-                      <div className="h-1 bg-white/40 rounded-full mx-auto max-w-24 animate-pulse" style={{animationDelay: '0.5s'}}></div>
-                      <div className="h-1 bg-white/30 rounded-full mx-auto max-w-40 animate-pulse" style={{animationDelay: '1s'}}></div>
+                    {/* Enhanced network visualization */}
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-center space-x-2">
+                        <div className="h-1 bg-white/40 rounded-full w-12 animate-pulse"></div>
+                        <div className="w-2 h-2 bg-white rounded-full animate-ping"></div>
+                        <div className="h-1 bg-white/40 rounded-full w-16 animate-pulse" style={{animationDelay: '0.3s'}}></div>
+                        <div className="w-2 h-2 bg-white rounded-full animate-ping" style={{animationDelay: '0.6s'}}></div>
+                        <div className="h-1 bg-white/40 rounded-full w-10 animate-pulse" style={{animationDelay: '0.9s'}}></div>
+                      </div>
+                      <div className="flex items-center justify-center space-x-2">
+                        <div className="h-1 bg-white/30 rounded-full w-8 animate-pulse" style={{animationDelay: '0.5s'}}></div>
+                        <div className="w-1.5 h-1.5 bg-white/70 rounded-full animate-ping" style={{animationDelay: '0.8s'}}></div>
+                        <div className="h-1 bg-white/30 rounded-full w-20 animate-pulse" style={{animationDelay: '1.1s'}}></div>
+                        <div className="w-1.5 h-1.5 bg-white/70 rounded-full animate-ping" style={{animationDelay: '1.4s'}}></div>
+                        <div className="h-1 bg-white/30 rounded-full w-14 animate-pulse" style={{animationDelay: '1.7s'}}></div>
+                      </div>
                     </div>
-                  </div>
-                  
-                  {/* Background pattern */}
-                  <div className="absolute inset-0 opacity-10">
-                    <div className="absolute top-4 left-4 w-4 h-4 border border-white rounded-full animate-ping"></div>
-                    <div className="absolute top-8 right-8 w-3 h-3 border border-white rounded-full animate-ping" style={{animationDelay: '1s'}}></div>
-                    <div className="absolute bottom-6 left-8 w-2 h-2 border border-white rounded-full animate-ping" style={{animationDelay: '2s'}}></div>
-                    <div className="absolute bottom-4 right-4 w-3 h-3 border border-white rounded-full animate-ping" style={{animationDelay: '0.5s'}}></div>
+                    
+                    {/* Status indicators */}
+                    <div className="flex justify-center space-x-6">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-3 h-3 bg-white rounded-full animate-pulse"></div>
+                        <span className="text-white/80 text-sm font-inter">SECURE</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-3 h-3 bg-white rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+                        <span className="text-white/80 text-sm font-inter">ACTIVE</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-3 h-3 bg-white rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+                        <span className="text-white/80 text-sm font-inter">PROTECTED</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 

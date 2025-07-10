@@ -28,7 +28,7 @@ const TargetAudience = () => {
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <header className="text-center mb-16">
-            <p className="text-sm font-semibold tracking-wider uppercase mb-4 font-inter" style={{ color: '#28A745' }}>
+            <p className="text-sm font-semibold tracking-wider uppercase mb-4 font-inter text-cyberes-primary">
               {t('audience.subtitle')}
             </p>
             <h2 id="audience-heading" className="text-3xl md:text-4xl font-bold text-cyberes-primary font-inter">
@@ -42,8 +42,7 @@ const TargetAudience = () => {
               <article key={index} className="text-center" role="listitem">
                 {/* Circular Badge */}
                 <div 
-                  className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6"
-                  style={{ backgroundColor: '#28A745' }}
+                  className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 bg-cyberes-primary"
                   aria-label={`Audience ${audience.number}`}
                 >
                   <span className="text-2xl font-bold text-white font-inter" aria-hidden="true">

@@ -32,8 +32,7 @@ const Hero = () => {
           {/* CTA Button */}
           <Button 
             size="lg" 
-            className="px-8 py-4 text-lg font-semibold text-white transition-all duration-200 hover:opacity-90 font-inter focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-cyberes-primary min-h-[48px] min-w-[120px]"
-            style={{ backgroundColor: '#28A745' }}
+            className="px-8 py-4 text-lg font-semibold text-white bg-cyberes-primary hover:bg-cyberes-light transition-all duration-200 font-inter focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-cyberes-primary min-h-[48px] min-w-[120px]"
             aria-label={`${t('hero.cta')} - Get started with cyber resilience training`}
           >
             {t('hero.cta')}
