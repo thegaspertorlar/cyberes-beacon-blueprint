@@ -34,7 +34,7 @@ const Footer = () => {
         {/* Bottom Border */}
         <div className="border-t border-cyberes-gray-light mt-12 pt-8 text-center">
           <p className="text-cyberes-gray text-sm font-inter">
-            {t('footer.copyright')}
+            © 2025 CybeRes Platform. All rights reserved. | Co-funded by the European Union
           </p>
         </div>
       </div>

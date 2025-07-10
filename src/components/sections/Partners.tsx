@@ -30,8 +30,12 @@ const Partners = () => {
               key={index} 
               className="flex flex-col items-center justify-center p-6 bg-cyberes-gray-lighter rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300 group"
             >
-              <div className="w-16 h-16 bg-cyberes-primary rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <span className="text-white font-bold text-lg font-inter">{partner.name.charAt(0)}</span>
+              {/* Logo placeholder with consistent layout */}
+              <div className="w-20 h-20 bg-white rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 border-2 border-cyberes-gray-light overflow-hidden">
+                {/* Placeholder for actual logo - maintains aspect ratio */}
+                <div className="w-16 h-16 bg-cyberes-gray-lighter rounded-md flex items-center justify-center">
+                  <span className="text-cyberes-gray text-xs font-inter font-medium">LOGO</span>
+                </div>
               </div>
               <h3 className="text-lg font-semibold text-cyberes-primary mb-2 text-center font-inter">
                 {partner.name}

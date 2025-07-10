@@ -1,57 +1,84 @@
 const CyberAnimation = () => {
   return (
-    <div className="absolute inset-0 overflow-hidden opacity-30" aria-hidden="true">
-      {/* Enhanced cyber security animation */}
+    <div className="absolute inset-0 overflow-hidden opacity-40" aria-hidden="true">
+      {/* Enhanced vibrant cyber security animation */}
       <svg
         className="absolute inset-0 w-full h-full"
         viewBox="0 0 1200 800"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         role="img"
-        aria-label="Dynamic cybersecurity network animation with data flow"
+        aria-label="Dynamic cybersecurity network animation with data flow and threat detection"
       >
         <defs>
-          {/* Dynamic grid pattern */}
-          <pattern id="dynamicGrid" width="60" height="60" patternUnits="userSpaceOnUse">
-            <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="1">
-              <animate attributeName="stroke-opacity" values="0.1;0.25;0.1" dur="4s" repeatCount="indefinite" />
+          {/* Enhanced grid pattern with glow */}
+          <pattern id="dynamicGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.2)" strokeWidth="1">
+              <animate attributeName="stroke-opacity" values="0.1;0.4;0.1" dur="3s" repeatCount="indefinite" />
             </path>
           </pattern>
           
-          {/* Glowing gradient for data streams */}
+          {/* Vibrant data flow gradient */}
           <linearGradient id="dataFlow" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stopColor="rgba(255,255,255,0)" />
-            <stop offset="50%" stopColor="rgba(255,255,255,0.8)" />
+            <stop offset="30%" stopColor="rgba(100,200,255,0.8)" />
+            <stop offset="70%" stopColor="rgba(255,255,255,1)" />
             <stop offset="100%" stopColor="rgba(255,255,255,0)" />
           </linearGradient>
           
-          {/* Shield gradient */}
+          {/* Threat detection gradient */}
+          <linearGradient id="threatScan" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="rgba(255,100,100,0)" />
+            <stop offset="50%" stopColor="rgba(255,100,100,0.9)" />
+            <stop offset="100%" stopColor="rgba(255,100,100,0)" />
+          </linearGradient>
+          
+          {/* Enhanced shield gradient */}
           <radialGradient id="shieldGlow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="rgba(255,255,255,0.6)" />
-            <stop offset="100%" stopColor="rgba(255,255,255,0.2)" />
+            <stop offset="0%" stopColor="rgba(100,200,255,0.8)" />
+            <stop offset="50%" stopColor="rgba(255,255,255,0.6)" />
+            <stop offset="100%" stopColor="rgba(255,255,255,0.3)" />
           </radialGradient>
+          
+          {/* Pulse effect */}
+          <filter id="pulse">
+            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+            <feMerge> 
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
         </defs>
         
         <rect width="100%" height="100%" fill="url(#dynamicGrid)" />
         
-        {/* Animated data streams */}
+        {/* Dynamic data streams */}
         <g>
-          {/* Horizontal data flows */}
-          <line x1="0" y1="200" x2="1200" y2="220" stroke="url(#dataFlow)" strokeWidth="3">
+          {/* High-priority data flows */}
+          <line x1="0" y1="150" x2="1200" y2="170" stroke="url(#dataFlow)" strokeWidth="4">
             <animateTransform 
               attributeName="transform" 
               type="translate" 
-              values="-100,0; 1300,0; -100,0" 
-              dur="6s" 
+              values="-200,0; 1400,0; -200,0" 
+              dur="4s" 
               repeatCount="indefinite"
             />
           </line>
-          <line x1="0" y1="400" x2="1200" y2="380" stroke="url(#dataFlow)" strokeWidth="2">
+          <line x1="0" y1="300" x2="1200" y2="280" stroke="url(#dataFlow)" strokeWidth="3">
             <animateTransform 
               attributeName="transform" 
               type="translate" 
-              values="-150,0; 1350,0; -150,0" 
-              dur="8s" 
+              values="-180,0; 1380,0; -180,0" 
+              dur="5s" 
+              repeatCount="indefinite"
+            />
+          </line>
+          <line x1="0" y1="450" x2="1200" y2="460" stroke="url(#dataFlow)" strokeWidth="3.5">
+            <animateTransform 
+              attributeName="transform" 
+              type="translate" 
+              values="-160,0; 1360,0; -160,0" 
+              dur="4.5s" 
               repeatCount="indefinite"
             />
           </line>
@@ -59,112 +86,181 @@ const CyberAnimation = () => {
             <animateTransform 
               attributeName="transform" 
               type="translate" 
-              values="-120,0; 1320,0; -120,0" 
-              dur="7s" 
+              values="-140,0; 1340,0; -140,0" 
+              dur="6s" 
               repeatCount="indefinite"
             />
           </line>
           
-          {/* Diagonal connections */}
-          <line x1="200" y1="100" x2="800" y2="300" stroke="rgba(255,255,255,0.4)" strokeWidth="2" strokeDasharray="8,4">
-            <animate attributeName="stroke-dashoffset" values="0;24" dur="3s" repeatCount="indefinite" />
+          {/* Threat scanning beams */}
+          <line x1="0" y1="250" x2="1200" y2="230" stroke="url(#threatScan)" strokeWidth="2">
+            <animateTransform 
+              attributeName="transform" 
+              type="translate" 
+              values="-100,0; 1300,0; -100,0" 
+              dur="3s" 
+              repeatCount="indefinite"
+            />
           </line>
-          <line x1="600" y1="150" x2="1000" y2="400" stroke="rgba(255,255,255,0.4)" strokeWidth="2" strokeDasharray="6,3">
-            <animate attributeName="stroke-dashoffset" values="0;18" dur="2.5s" repeatCount="indefinite" />
+          
+          {/* Network connections */}
+          <line x1="100" y1="80" x2="700" y2="200" stroke="rgba(100,200,255,0.6)" strokeWidth="2" strokeDasharray="10,5">
+            <animate attributeName="stroke-dashoffset" values="0;30" dur="2s" repeatCount="indefinite" />
+          </line>
+          <line x1="500" y1="120" x2="900" y2="320" stroke="rgba(255,255,255,0.5)" strokeWidth="2" strokeDasharray="8,4">
+            <animate attributeName="stroke-dashoffset" values="0;24" dur="2.5s" repeatCount="indefinite" />
+          </line>
+          <line x1="800" y1="100" x2="300" y2="500" stroke="rgba(100,200,255,0.4)" strokeWidth="2" strokeDasharray="6,3">
+            <animate attributeName="stroke-dashoffset" values="0;18" dur="3s" repeatCount="indefinite" />
           </line>
         </g>
         
-        {/* Security nodes network */}
+        {/* Enhanced security nodes */}
         <g>
-          {/* Main security hubs */}
-          <circle cx="300" cy="200" r="8" fill="rgba(255,255,255,0.8)">
-            <animate attributeName="r" values="6;12;6" dur="3s" repeatCount="indefinite" />
-            <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite" />
+          {/* Primary security hubs */}
+          <circle cx="200" cy="150" r="10" fill="rgba(100,200,255,0.9)" filter="url(#pulse)">
+            <animate attributeName="r" values="8;15;8" dur="2.5s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.7;1;0.7" dur="2.5s" repeatCount="indefinite" />
           </circle>
-          <circle cx="700" cy="350" r="8" fill="rgba(255,255,255,0.8)">
-            <animate attributeName="r" values="6;12;6" dur="2.5s" repeatCount="indefinite" />
-            <animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite" />
+          <circle cx="600" cy="300" r="10" fill="rgba(255,255,255,0.9)" filter="url(#pulse)">
+            <animate attributeName="r" values="8;15;8" dur="2s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite" />
           </circle>
-          <circle cx="900" cy="180" r="8" fill="rgba(255,255,255,0.8)">
-            <animate attributeName="r" values="6;12;6" dur="3.5s" repeatCount="indefinite" />
-            <animate attributeName="opacity" values="0.6;1;0.6" dur="3.5s" repeatCount="indefinite" />
+          <circle cx="950" cy="200" r="10" fill="rgba(100,200,255,0.9)" filter="url(#pulse)">
+            <animate attributeName="r" values="8;15;8" dur="3s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="400" cy="500" r="10" fill="rgba(255,255,255,0.9)" filter="url(#pulse)">
+            <animate attributeName="r" values="8;15;8" dur="2.8s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.7;1;0.7" dur="2.8s" repeatCount="indefinite" />
           </circle>
           
           {/* Secondary nodes */}
-          <circle cx="150" cy="350" r="4" fill="rgba(255,255,255,0.6)">
-            <animate attributeName="r" values="3;6;3" dur="2s" repeatCount="indefinite" />
+          <circle cx="100" cy="400" r="6" fill="rgba(100,200,255,0.7)">
+            <animate attributeName="r" values="4;8;4" dur="1.8s" repeatCount="indefinite" />
           </circle>
-          <circle cx="500" cy="500" r="4" fill="rgba(255,255,255,0.6)">
-            <animate attributeName="r" values="3;6;3" dur="2.8s" repeatCount="indefinite" />
+          <circle cx="800" cy="450" r="6" fill="rgba(255,255,255,0.7)">
+            <animate attributeName="r" values="4;8;4" dur="2.2s" repeatCount="indefinite" />
           </circle>
-          <circle cx="1050" cy="300" r="4" fill="rgba(255,255,255,0.6)">
-            <animate attributeName="r" values="3;6;3" dur="2.3s" repeatCount="indefinite" />
+          <circle cx="1100" cy="350" r="6" fill="rgba(100,200,255,0.7)">
+            <animate attributeName="r" values="4;8;4" dur="2.1s" repeatCount="indefinite" />
           </circle>
         </g>
         
-        {/* Central security shield - more prominent */}
+        {/* Central enhanced security shield */}
         <g transform="translate(600, 400)">
-          {/* Rotating outer ring */}
-          <circle cx="0" cy="0" r="50" fill="none" stroke="rgba(255,255,255,0.3)" strokeWidth="2" strokeDasharray="8,4">
+          {/* Outer rotating shield ring */}
+          <circle cx="0" cy="0" r="60" fill="none" stroke="rgba(100,200,255,0.5)" strokeWidth="3" strokeDasharray="12,6" filter="url(#pulse)">
             <animateTransform 
               attributeName="transform" 
               type="rotate" 
               values="0;360" 
-              dur="15s" 
+              dur="12s" 
               repeatCount="indefinite"
             />
           </circle>
           
-          {/* Pulsing middle ring */}
-          <circle cx="0" cy="0" r="35" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5">
-            <animate attributeName="r" values="30;40;30" dur="4s" repeatCount="indefinite" />
-            <animate attributeName="opacity" values="0.3;0.7;0.3" dur="4s" repeatCount="indefinite" />
+          {/* Middle pulsing ring */}
+          <circle cx="0" cy="0" r="45" fill="none" stroke="rgba(255,255,255,0.6)" strokeWidth="2">
+            <animate attributeName="r" values="40;50;40" dur="3s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.4;0.8;0.4" dur="3s" repeatCount="indefinite" />
           </circle>
           
-          {/* Main shield */}
+          {/* Inner scanning ring */}
+          <circle cx="0" cy="0" r="30" fill="none" stroke="rgba(100,200,255,0.8)" strokeWidth="1" strokeDasharray="4,2">
+            <animateTransform 
+              attributeName="transform" 
+              type="rotate" 
+              values="360;0" 
+              dur="8s" 
+              repeatCount="indefinite"
+            />
+          </circle>
+          
+          {/* Main shield body */}
           <path 
-            d="M-20,-15 L0,-25 L20,-15 L20,10 C20,18 10,25 0,25 C-10,25 -20,18 -20,10 Z" 
+            d="M-25,-20 L0,-30 L25,-20 L25,15 C25,25 12,32 0,32 C-12,32 -25,25 -25,15 Z" 
             fill="url(#shieldGlow)"
-            stroke="rgba(255,255,255,0.8)"
-            strokeWidth="1"
+            stroke="rgba(255,255,255,0.9)"
+            strokeWidth="2"
+            filter="url(#pulse)"
           >
-            <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite" />
           </path>
           
-          {/* Lock symbol in shield */}
-          <rect x="-4" y="-2" width="8" height="8" rx="1" fill="rgba(255,255,255,0.9)" />
-          <circle cx="0" cy="-6" r="3" fill="none" stroke="rgba(255,255,255,0.9)" strokeWidth="1.5" />
+          {/* Enhanced lock symbol */}
+          <rect x="-6" y="-3" width="12" height="12" rx="2" fill="rgba(255,255,255,0.95)" />
+          <circle cx="0" cy="-8" r="4" fill="none" stroke="rgba(255,255,255,0.95)" strokeWidth="2" />
+          
+          {/* Security status indicators */}
+          <circle cx="-20" cy="-10" r="2" fill="rgba(100,255,100,0.9)">
+            <animate attributeName="opacity" values="0.5;1;0.5" dur="1.5s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="20" cy="-10" r="2" fill="rgba(100,255,100,0.9)">
+            <animate attributeName="opacity" values="0.5;1;0.5" dur="1.5s" repeatCount="indefinite" begin="0.5s" />
+          </circle>
         </g>
         
-        {/* Floating data particles */}
+        {/* Enhanced floating particles */}
         <g>
-          <circle cx="100" cy="100" r="2" fill="rgba(255,255,255,0.5)">
+          <circle cx="80" cy="80" r="3" fill="rgba(100,200,255,0.8)" filter="url(#pulse)">
             <animateTransform 
               attributeName="transform" 
               type="translate" 
-              values="0,0; 50,30; 0,0" 
+              values="0,0; 60,40; 0,0" 
+              dur="4s" 
+              repeatCount="indefinite"
+            />
+          </circle>
+          <circle cx="1120" cy="120" r="2.5" fill="rgba(255,255,255,0.7)">
+            <animateTransform 
+              attributeName="transform" 
+              type="translate" 
+              values="0,0; -40,60; 0,0" 
               dur="5s" 
               repeatCount="indefinite"
             />
           </circle>
-          <circle cx="1100" cy="150" r="1.5" fill="rgba(255,255,255,0.4)">
+          <circle cx="150" cy="700" r="3.5" fill="rgba(100,200,255,0.9)">
             <animateTransform 
               attributeName="transform" 
               type="translate" 
-              values="0,0; -30,50; 0,0" 
-              dur="6s" 
+              values="0,0; 50,-30; 0,0" 
+              dur="3.5s" 
               repeatCount="indefinite"
             />
           </circle>
-          <circle cx="200" cy="700" r="2.5" fill="rgba(255,255,255,0.6)">
+          <circle cx="1050" cy="650" r="2" fill="rgba(255,255,255,0.6)">
             <animateTransform 
               attributeName="transform" 
               type="translate" 
-              values="0,0; 40,-20; 0,0" 
+              values="0,0; -35,-45; 0,0" 
               dur="4.5s" 
               repeatCount="indefinite"
             />
           </circle>
+        </g>
+        
+        {/* Scanning lines for dynamic effect */}
+        <g>
+          <line x1="0" y1="0" x2="1200" y2="0" stroke="rgba(100,200,255,0.4)" strokeWidth="1">
+            <animateTransform 
+              attributeName="transform" 
+              type="translate" 
+              values="0,0; 0,800; 0,0" 
+              dur="8s" 
+              repeatCount="indefinite"
+            />
+          </line>
+          <line x1="0" y1="0" x2="0" y2="800" stroke="rgba(255,255,255,0.3)" strokeWidth="1">
+            <animateTransform 
+              attributeName="transform" 
+              type="translate" 
+              values="0,0; 1200,0; 0,0" 
+              dur="10s" 
+              repeatCount="indefinite"
+            />
+          </line>
         </g>
       </svg>
     </div>
